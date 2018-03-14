@@ -6,12 +6,12 @@
   </head>
   <body>
     <header class="main-header">
-      <div class="logo">
-        <a class="main-header-logo" href="index.html">
-          <img src="img/logo.svg" width="154" height="64" alt="Магазин «Gllacy»">
-        </a>
-      </div>
       <nav class="main-navigation">
+        <div class="logo">
+          <a class="main-header-logo" href="index.html">
+            <img src="img/logo.svg" width="154" height="64" alt="Магазин «Gllacy»">
+          </a>
+        </div>
         <ul class="site-navigation">
           <li class="main-item catalog"><a href="catalog.html">Каталог</a>
             <ul class="catalog-menu">
@@ -48,51 +48,51 @@
       <h2>Сливочное мороженое</h2>
       <section class="filter">
         <form action="https://echo.htmlacademy.ru" method="post">
-          <div class="filter-item">
-            <label>Сортировка:</label>
+          <fieldset class="filter-item">
+            <legend>Сортировка:</legend>
             <select>
               <option>по популярности</option>
               <option>по рейтингу</option>
               <option>по цене</option>
             </select>
-          </div>
-          <div class="filter-item">
-            <label>Цена:</label>
+          </fieldset>
+          <fieldset class="filter-item">
+            <legend>Цена:</legend>
             <input type="range" min="0" max="500" step="1" value="310">
-          </div>
-          <div class="filter-item">
-            <label>Жирность:</label>
+          </fieldset>
+          <fieldset class="filter-item">
+            <legend>Жирность:</legend>
             <ul>
-              <li><input name="caloricity" type="radio" value="0%">0%</li>
-              <li><input name="caloricity" type="radio" value="<10%" checked>до 10%</li>
-              <li><input name="caloricity" type="radio" value="<30%">до 30%</li>
-              <li><input name="caloricity" type="radio" value="30%>">выше 30%</li>
+              <li><input name="caloricity" type="radio" id="percent0" value="0%"><label for="percent0">0%</label></li>
+              <li><input name="caloricity" type="radio" id="percent10" value="<10%" checked><label for="percent10">до 10%</label></li>
+              <li><input name="caloricity" type="radio" id="percent30" value="<30%"><label for="percent30">до 30%</label></li>
+              <li><input name="caloricity" type="radio" id="percent40" value="30%>"><label for="percent40">выше 30%</label></li>
             </ul>
-          </div>
-          <div class="filter-item">
-            <label>Наполнители:</label>
+          </fieldset>
+          <fieldset class="filter-item">
+            <legend>Наполнители:</legend>
             <ul>
               <li class="fillers-option">
-                <input class="fillers-item" type="checkbox" name="chocolate" checked>шоколадные
+                <input class="fillers-item" type="checkbox" id="product1" name="chocolate" checked><label for="product1">шоколадные</label>
               </li>
               <li class="fillers-option">
-                <input class="fillers-item" type="checkbox" name="sugar" checked>
-                сахарные присыпки
+                <input class="fillers-item" type="checkbox" id="product2" name="sugar" checked>
+                <label for="product2">сахарные присыпки</label>
               </li>
               <li class="fillers-option">
-                <input class="fillers-item" type="checkbox" name="fruit">
-                фрукты
+                <input class="fillers-item" type="checkbox" id="product3" name="fruit">
+                <label for="product3">фрукты</label>
               </li>
               <li class="fillers-option">
-                <input class="fillers-item" type="checkbox" name="syrups">
-                сиропы
+                <input class="fillers-item" type="checkbox" id="product4" name="syrups">
+                <label for="product4">сиропы</label>
               </li>
               <li class="fillers-option">
-                <input class="fillers-item" type="checkbox" name="jams">
-                джемы
+                <input class="fillers-item" type="checkbox" id="product5" name="jams">
+                <label for="product5">джемы</label>
               </li>
             </ul>
-          </div>
+          </fieldset>
           <button type="submit" class="filter-button">Применить</button>
         </form>
       </section>
@@ -218,17 +218,17 @@
           </h2>
         </article>
 
-        <div class="paginator">
-          <ul class="catalog-navigation-site">
-            <li class="catalog-navigation-item"><a class="button-navigation button-back" href="catalog.html">&lsaquo;</a></li>
-            <li class="catalog-navigation-item"><a class="button-navigation" href="catalog.html">1</a></li>
-            <li class="catalog-navigation-item"><a class="button-navigation" href="catalog2.html">2</a></li>
-            <li class="catalog-navigation-item"><a class="button-navigation" href="catalog3.html">3</a></li>
-            <li class="catalog-navigation-item"><a class="button-navigation" href="catalog4.html">4</a></li>
-            <li class="catalog-navigation-item"><a class="button-navigation" href="catalog5.html">5</a></li>
-            <li class="catalog-navigation-item"><a class="button-navigation button-next" href="catalog.html">&rsaquo;</a></li>
+        <nav class="paginator">
+          <ul class="paginator-list">
+            <li class="paginator-item"><a class="button-navigation button-back" href="catalog.html">&lsaquo;</a></li>
+            <li class="paginator-item"><a class="button-navigation" href="catalog.html">1</a></li>
+            <li class="paginator-item"><a class="button-navigation" href="catalog2.html">2</a></li>
+            <li class="paginator-item"><a class="button-navigation" href="catalog3.html">3</a></li>
+            <li class="paginator-item"><a class="button-navigation" href="catalog4.html">4</a></li>
+            <li class="paginator-item"><a class="button-navigation" href="catalog5.html">5</a></li>
+            <li class="paginator-item"><a class="button-navigation button-next" href="catalog.html">&rsaquo;</a></li>
           </ul>
-        </div>
+        </nav>
       </section>
     </main>
 
@@ -241,7 +241,7 @@
           <li><a class="social-btn" href="#">В контакте</a></li>
         </ul>
         <ul class="footer-links">
-          <li><a href="#">Для поставщиков</a></li>
+          <li><a href="#">&hearts;Для поставщиков</a></li>
           <li><a href="#">О производстве</a></li>
           <li><a href="#">Наши документы</a></li>
           <li><a href="#">Экологические стандарты</a></li>

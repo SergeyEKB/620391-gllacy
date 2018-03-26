@@ -8,6 +8,7 @@
     <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
+    <div class="container">
     <header class="main-header">
       <nav class="main-navigation">
         <div class="logo">
@@ -31,9 +32,10 @@
       </nav>
       <nav class="user-navigation">
         <ul class="user-list">
-          <li class="user-item"><a href="#"></a></li>
-          <li class="user-item"><a href="#">Вход</a></li>
-          <li class="user-item"><a href="#">Пусто</a></li>
+        <ul class="user-list">
+          <li class="user-item"><a class="user-item-search" href="#"><img src="img/loupe.svg" width="20" height="20"></a></li>
+          <li class="user-item"><a class="user-item-login" href="#"><img src="img/entrance.svg" width="20" height="20">Вход</a></li>
+          <li class="user-item"><a class="user-item-bascet" href="#"><img src="img/basket.svg" width="20" height="20">Пусто</a></li>
         </ul>
       </nav>
       <div class="info">
@@ -99,7 +101,8 @@
         </form>
       </section>
 
-      <section class="products">
+      <section class="products-cat">
+        <div class="products">
         <article class="products-item">
           <img class="product-image" src="img/product1.jpg" width="267" height="267" alt="Сливочное с апельсиновым джемом">
           <span class="product-price">
@@ -219,6 +222,7 @@
             Сливочное с мятным сиропом
           </h2>
         </article>
+        </div>
 
         <nav class="paginator">
           <ul class="paginator-list">
@@ -236,23 +240,24 @@
 
     <footer class="footer-main">
       <div class="container-block">
-        <ul class="footer-social">
-          <li><a class="social-btn" href="#">Twitter</a></li>
-          <li><a class="social-btn" href="#">Instagram</a></li>
-          <li><a class="social-btn" href="#">Facebook</a></li>
-          <li><a class="social-btn" href="#">В контакте</a></li>
-        </ul>
-        <ul class="footer-links">
-          <li><a href="#">&#10084;Для поставщиков</a></li>
-          <li><a href="#">О производстве</a></li>
-          <li><a href="#">Наши документы</a></li>
-          <li><a href="#">Экологические стандарты</a></li>
-        </ul>
+        <div class="footer-social">
+          <a class="social-btn twitter-btn" href="#"><img class="twitter" width="39" height="39" src="img/twitter.svg" alt="Twitter"></a>
+          <a class="social-btn instagram-btn" href="#"><img class="instagram" width="39" height="39" src="img/instagram.svg" alt="Instagram"></a>
+          <a class="social-btn facebook-btn" href="#"><img class="facebook" width="39" height="39" src="img/fb.svg" alt="Facebook"></a>
+          <a class="social-btn vk-btn" href="#"><img class="В контакте" width="39" height="39" src="img/vk.svg" alt="В контакте"></a>
+        </div>
+        <div class="footer-links">
+          <span class="footer-l"><a href="#">&#10084;Для поставщиков</a>
+          <a href="#">О производстве</a></span>
+          <span class="footer-r"><a href="#">Наши документы</a>
+          <a href="#">Экологические стандарты</a></span>
+        </div>
         <div class="footer-copy">
-          <img class="logo-html"  width="108" height="39" src="img/logo-htmlacademy.svg" alt="Логотип HTMLAcademy">
+          <img class="logo-html" width="108" height="39" src="img/logo-htmlacademy.svg" alt="Логотип HTMLAcademy">
           <p>Сделано в HTML Academy&#169;2017</p>
         </div>
       </div>
     </footer>
+  </div>
   </body>
 </html>

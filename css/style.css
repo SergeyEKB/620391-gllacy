@@ -17,6 +17,21 @@ body {
   padding: 0 2.3%;
 }
 
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .main-header {
   position: relative;
   display: flex;
@@ -39,7 +54,7 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-
+  flex-wrap: wrap;
 }
 
  .main-item {
@@ -78,7 +93,7 @@ body {
 }
 
 .user-navigation {
-  padding-top: 30px;
+  padding-top: 34px;
 }
 
 .user-list {
@@ -96,40 +111,65 @@ body {
   margin-left: 10px;
 }
 
-.user-item-search img {
-  background-color: #b0c0c7;
+.user-item-search {
+  position: relative;
+  padding: 10px 20px;
   border-radius: 50%;
-  margin-bottom: -10px;
-  padding: 8px;
+  text-decoration: none;
+  background-color: #b0c0c7;
+  color: #ffffff;
+}
+
+.user-item-search::before {
+  content: " ";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-image: url(../img/loupe.svg);
+  background-repeat: no-repeat;
 }
 
 .user-item-login {
+  position: relative;
   background-color: #b0c0c7;
   width: 92px;
   border-radius: 30px;
   color: #ffffff;
-  padding: 10px 30px;
+  padding: 10px 30px 10px 51px;
   text-decoration: none;
 }
 
-.user-item-login img {
-  position: relative;
-  top: 5px;
-  right: 8px;
+.user-item-login::before {
+  content: " ";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 8px;
+  left: 23px;
+  background-image: url(../img/entrance.svg);
+  background-repeat: no-repeat;
 }
 
 .user-item-bascet {
-  padding: 10px 35px;
+  position: relative;
+  padding: 10px 35px 10px 57px;
   border-radius: 30px;
   text-decoration: none;
   background-color: #b0c0c7;
   color: #ffffff;
 }
 
-.user-item-bascet img {
-  position: relative;
-  top: 5px;
-  right: 8px;
+.user-item-bascet::before {
+  content: " ";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 8px;
+  left: 25px;
+  background-image: url(../img/basket.svg);
+  background-repeat: no-repeat;
 }
 
 .info {
@@ -200,15 +240,21 @@ body {
   text-align: center;
 }
 
+.button {
+  text-decoration: none;
+  border-radius: 40px;
+  text-align: center;
+  vertical-align: middle;
+  color: #ffffff;
+  background-image: linear-gradient( 90deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
+  box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.64);
+}
+ 
+
 .slider-btn {
   font-size: 32px;
   line-height: 44px;
-  color: #ffffff;
-  text-decoration: none;
-  background-image: linear-gradient( 90deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
-  box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.64);
   padding: 18px 40px;
-  border-radius: 40px;
 }
 
 .slider-btn:hover {
@@ -270,14 +316,6 @@ line-height: 22px;
   font-size: 18px;
   line-height: 24px;
   padding: 13px 20px;
-  text-decoration: none;
-  border-radius: 40px;
-  text-align: center;
-  vertical-align: middle;
-  color: #ffffff;
-  background-image: linear-gradient( 90deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
-  opacity: 0.988;
-  box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.64);
 }
 
 .baner-btn:hover {
@@ -411,16 +449,26 @@ line-height: 22px;
 
 .news-right {
   width: 560px;
-  padding: 10px 20px;
-  background-image: url("../img/background5.jpg");
+  padding: 5px 6px;
+  background-image: url("../img/bg-post.svg");
   background-color:#ffffff;
   border-radius: 15px;
   color: #323232;
 }
 
+.news-conteiner {
+  position: relative;
+  background-color: #ffffff;
+  width: 93%;
+  border-radius: 15px;
+  padding: 15px 20px 30px 20px;
+}
+
 .post-mail {
-  width: 368px;
+  width: 360px;
   height: 44px;
+  border-radius: 5px;
+  box-shadow: none;
 }
 
 .news-right button {
@@ -443,25 +491,63 @@ line-height: 22px;
 }
 
 .map {
+  position: relative;
   width: 100%;
   height: 430px;
   background-image: url("../img/map.jpg");
   background-size: cover;
 }
 
-.paginator-list{
+.ice {
+  position: absolute;
+  left: 306px;
+  bottom: 32%;
+}
+
+.contact-info {
+  width: 300px;
+  position: absolute;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  color: #000;
+  top: 63px;
+  right: 27px;
+  border-radius: 15px;
+  padding: 32px 25px;
+}
+
+.contact-text {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.contact-adress,
+.contact-tel {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.form-btn {
+  margin-top: 27px;
+}
+
+.paginator-list {
+  width: 188px;
   list-style: none;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
-.paginator-list li {
-  margin-left: 20px;
-}
-
-.paginator-list a{
+.paginator-list a {
   color: #ffffff;
   text-decoration: none;
+}
+
+.paginator-list a:hover {
+  border-radius: 50%;
+  padding: 5px 10px;
+  background-color: #ffffff;
+  color: #000;
 }
 
 .footer-social li,
@@ -496,16 +582,53 @@ line-height: 22px;
 
 .footer-social {
   display: flex;
+  position: relative;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 186px;
   margin-right: 214px;
+  margin-bottom: 30px;
+}
 
+.social-btn:hover {
+  background-color: #ffffff;
+}
+
+.social-btn:active {
+  
+}
+
+.social-btn::before {
+  content: " ";
+  width: 38px;
+  height: 38px;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0.502);
+  background-position: 50% 50%;
+  border-radius: 50%;
+}
+
+.twitter-btn::before {
+  background-image: url(../img/twitter.svg);
+}
+
+.instagram-btn::before {
+  background-image: url(../img/instagram.svg);
+}
+
+.facebook-btn::before {
+  background-image: url(../img/fb.svg);
+}
+
+.vk-btn::before {
+  background-image: url(../img/vk.svg);
 }
 
 .footer-links {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   width: 330px;
 }
 
@@ -520,9 +643,16 @@ line-height: 22px;
 
 .footer-l {
  display: flex;
+ position: relative;
  flex-direction: column; 
  margin-right: 10px;
 }
+
+.heart {
+  position: absolute;
+  right: 115px;
+}
+
 .footer-r {
   display: flex;
   flex-direction: column;
